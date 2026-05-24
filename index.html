@@ -56,7 +56,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@900&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg: #F5E6DC;
@@ -263,7 +263,7 @@
   .rail-left .rail-card .eyebrow{font-size:13px;margin-top:6px}
   .rail-left .rail-card .tagline{font-family:"Noto Serif JP","Shippori Mincho",ui-serif,serif;font-weight:900;font-size:22px;line-height:1.5;letter-spacing:.06em;color:var(--ink);margin-top:14px}
   .rail-left .rail-card .desc{font-size:12px;color:var(--ink-2);line-height:1.9;margin-top:14px}
-  .rail-left .pill{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:#06C755;color:#fff;border-radius:10px;padding:12px 18px;font-size:12.5px;font-weight:700;letter-spacing:.06em;box-shadow:0 10px 22px rgba(6,199,85,.25);text-align:left;line-height:1.3}
+  .rail-left .pill{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:#06A847;color:#fff;border-radius:10px;padding:12px 18px;font-size:12.5px;font-weight:700;letter-spacing:.06em;box-shadow:0 10px 22px rgba(6,199,85,.25);text-align:left;line-height:1.3}
   .rail-left .pill svg{width:18px;height:18px;flex:none}
   .rail-left .pill small{display:block;font-weight:500;font-size:10px;opacity:.92;margin-top:2px;letter-spacing:.08em}
   .rail-left .pill::before{content:none}
@@ -303,7 +303,7 @@
   .rail-nav .nv .en{font-family:var(--latin);font-style:italic;font-size:10.5px;color:var(--muted);letter-spacing:.12em}
   .rail-right .rail-cta{
     margin-top:18px;display:block;text-align:center;
-    background:#06C755;color:#fff;border-radius:10px;padding:14px 16px;
+    background:#06A847;color:#fff;border-radius:10px;padding:14px 16px;
     font-weight:700;font-size:13px;letter-spacing:.06em;
     box-shadow:0 10px 22px rgba(6,199,85,.25);
   }
@@ -407,7 +407,7 @@
   }
   .menu-drawer-foot .line-cta{
     display:flex;align-items:center;justify-content:center;gap:10px;
-    background:#06C755;color:#fff;border-radius:10px;padding:14px 16px;
+    background:#06A847;color:#fff;border-radius:10px;padding:14px 16px;
     font-weight:700;font-size:14px;letter-spacing:.06em;
     box-shadow:0 10px 24px rgba(6,199,85,.25);
   }
@@ -510,6 +510,12 @@
   }
   @media (prefers-reduced-motion: reduce){
     .fv-bg .canopy,.fv-bg .canopy-2,.fv-bg .glint,.petal{animation:none}
+    *,*::before,*::after{
+      animation-duration:.001ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.001ms !important;
+      scroll-behavior:auto !important;
+    }
   }
 
   /* ── FV entrance animation ─────────────────────────── */
@@ -629,7 +635,7 @@
   .cta-dark{
     display:flex;align-items:center;justify-content:center;gap:10px;
     width:calc(100% - 36px);margin:24px 18px 0;
-    background:#06C755;color:#fff;
+    background:#06A847;color:#fff;
     padding:20px 26px;border-radius:10px;
     font-family:var(--serif);font-size:16px;letter-spacing:.06em;font-weight:700;
     box-shadow:0 12px 26px rgba(6,199,85,.28);
@@ -822,14 +828,14 @@
   .line-card .qr img{width:100%;height:100%;object-fit:cover;display:block}
   .line-btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    background:#06C755;color:#fff;padding:18px 26px;border-radius:10px;
+    background:#06A847;color:#fff;padding:18px 26px;border-radius:10px;
     margin-top:22px;font-weight:700;font-size:16px;letter-spacing:.06em;width:100%;
     box-shadow:0 12px 26px rgba(6,199,85,.28);
     flex-wrap:wrap;
   }
   .line-btn svg{width:22px;height:22px;flex:none}
   .line-btn .lbl{display:inline-flex;flex-direction:column;line-height:1.25;text-align:left}
-  .line-btn .lbl small{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.08em;opacity:.92;margin-top:2px}
+  .line-btn .lbl small{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.08em;opacity:1;margin-top:2px}
   .perks{display:flex;gap:8px;justify-content:center;margin-top:18px;flex-wrap:wrap}
   .perk{font-size:11px;color:var(--accent);border:1px solid var(--accent-soft);padding:5px 12px;border-radius:999px;background:#FFF6EF}
 
@@ -922,7 +928,7 @@
   .sticky-sep{width:1px;height:32px;background:var(--line)}
   .sticky-btn{
     flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
-    background:#06C755;color:#fff;padding:14px 16px;border-radius:8px;
+    background:#06A847;color:#fff;padding:14px 16px;border-radius:8px;
     font-weight:700;font-size:14px;letter-spacing:.04em;
     box-shadow:0 8px 18px rgba(6,199,85,.25);
   }
@@ -959,7 +965,7 @@
   <!-- LEFT RAIL (desktop only) -->
   <aside class="rail rail-left" aria-hidden="true">
     <div class="rail-card">
-      <img class="mark" src="assets/logo.png" alt="" width="600" height="584" loading="lazy" decoding="async" />
+      <img class="mark" src="assets/logo.webp" alt="" width="600" height="584" loading="lazy" decoding="async" />
       <div class="eyebrow">Marriage Support</div>
       <div class="tagline">『選ばれる自分』<br>自分を好きになる<br>新しい婚活</div>
       <p class="desc">20・30代が選ぶ、
@@ -978,7 +984,7 @@
   <!-- HEADER -->
   <header class="header">
     <a href="#fv" class="logo" aria-label="EN BLOOM SUN">
-      <img src="assets/logo.png" alt="" width="600" height="584" decoding="async" />
+      <img src="assets/logo.webp" alt="" width="600" height="584" decoding="async" />
       <span class="text">
         <span class="jp">結婚相談所</span>
         <span class="en">EN BLOOM SUN</span>
@@ -994,7 +1000,7 @@
   <div class="menu-scrim" id="menu-scrim" hidden></div>
   <aside class="menu-drawer" id="menu-drawer" aria-hidden="true" aria-label="サイトメニュー" inert>
     <div class="menu-drawer-head">
-      <img src="assets/logo.png" alt="" width="600" height="584" loading="lazy" decoding="async" />
+      <img src="assets/logo.webp" alt="" width="600" height="584" loading="lazy" decoding="async" />
       <span class="lbl">
         <span class="jp">結婚相談所</span>
         <span class="en">EN BLOOM SUN</span>
@@ -1022,6 +1028,7 @@
     </div>
   </aside>
 
+  <main>
   <!-- FV -->
   <section id="fv" class="fv" data-screen-label="FV">
     <div class="fv-bg" aria-hidden="true">
@@ -1037,7 +1044,7 @@
       <span class="petal"></span>
       <span class="petal"></span>
     </div>
-    <div class="fv-logo-mark"><img src="assets/logo.png" alt="EN BLOOM SUN" width="600" height="584" decoding="async" /></div>
+    <div class="fv-logo-mark"><img src="assets/logo.webp" alt="EN BLOOM SUN" width="600" height="584" decoding="async" /></div>
     <div class="wrap">
       <div class="eyebrow">Marriage Support</div>
       <h1 id="fv-h1" data-anim-text>『選ばれる自分』
@@ -1402,11 +1409,12 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="logo">
-      <img src="assets/logo.png" alt="" width="600" height="584" loading="lazy" decoding="async" />
+      <img src="assets/logo.webp" alt="" width="600" height="584" loading="lazy" decoding="async" />
       <span class="text">
         <span class="jp">結婚相談所</span>
         <span class="en">EN BLOOM SUN</span>
@@ -1429,7 +1437,7 @@
 
   <!-- PODCAST PICKER MODAL -->
   <div class="pod-modal" id="podcast-modal" role="dialog" aria-modal="true" aria-labelledby="podcast-modal-title" aria-hidden="true">
-    <button class="pod-modal-scrim" type="button" aria-label="閉じる"></button>
+    <button class="pod-modal-scrim" type="button" aria-label="閉じる" tabindex="-1"></button>
     <div class="pod-modal-card" role="document">
       <button class="pod-modal-close" type="button" aria-label="閉じる">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6l-12 12"/></svg>
@@ -1508,7 +1516,9 @@
 </div>
 
 <script>
-  document.querySelectorAll('.faq-q').forEach(q=>{
+  document.querySelectorAll('.faq-q').forEach((q,i)=>{
+    const ans = document.getElementById(q.getAttribute('aria-controls'));
+    if (ans) { if (!q.id) q.id = 'faq-q' + (i + 1); ans.setAttribute('aria-labelledby', q.id); }
     q.addEventListener('click',()=>{
       const open=q.closest('.faq-item').classList.toggle('open');
       q.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -1565,7 +1575,7 @@
     if(!trigger || !modal) return;
     const closeBtn = modal.querySelector('.pod-modal-close');
     const scrim = modal.querySelector('.pod-modal-scrim');
-    const FOCUSABLE = 'a[href], button:not([disabled])';
+    const FOCUSABLE = 'a[href], button:not([disabled]):not([tabindex="-1"])';
     const open = () => {
       modal.classList.add('is-open');
       modal.setAttribute('aria-hidden', 'false');
@@ -1606,6 +1616,8 @@
     const drawer = document.getElementById('menu-drawer');
     const scrim = document.getElementById('menu-scrim');
     if(!btn || !drawer || !scrim) return;
+    const page = drawer.parentElement;
+    let inertEls = [];
     const open = () => {
       btn.classList.add('is-open');
       btn.setAttribute('aria-expanded', 'true');
@@ -1615,6 +1627,7 @@
       scrim.hidden = false;
       requestAnimationFrame(() => scrim.classList.add('is-open'));
       document.body.classList.add('menu-locked');
+      if (page) { inertEls = [...page.children].filter(el => el !== drawer && el !== scrim); inertEls.forEach(el => el.inert = true); }
       const firstLink = drawer.querySelector('a[href]');
       if (firstLink) firstLink.focus();
     };
@@ -1627,6 +1640,7 @@
       scrim.classList.remove('is-open');
       setTimeout(() => { scrim.hidden = true; }, 300);
       document.body.classList.remove('menu-locked');
+      inertEls.forEach(el => el.inert = false); inertEls = [];
       if (returnFocus) btn.focus();
     };
     btn.addEventListener('click', () => {
