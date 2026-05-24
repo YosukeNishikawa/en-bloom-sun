@@ -693,6 +693,11 @@
     box-shadow:0 18px 40px rgba(80,40,20,.14)
   }
   .counselor-photo img{width:100%;height:auto;display:block}
+  .counselor-photo .cp-layer{display:block}
+  .counselor-photo .cp-alt{position:absolute;inset:0;opacity:0;animation:counselorCross 6s ease-in-out infinite;will-change:opacity}
+  .counselor-photo .cp-alt img{height:100%;object-fit:cover}
+  @keyframes counselorCross{0%,45%{opacity:0}50%,95%{opacity:1}100%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){.counselor-photo .cp-alt{animation:none;opacity:0}}
   .counselor-name-card{
     position:relative;margin:-32px 38px 0;background:var(--white);
     padding:22px 24px;border:1px solid var(--line);box-shadow:var(--shadow-md);
@@ -1149,7 +1154,10 @@
       <div class="eyebrow">Counselor</div>
       <h2 class="section-title reveal">代表カウンセラーの想い<small>MESSAGE FROM COUNSELOR</small></h2>
     </div>
-    <div class="counselor-photo reveal reveal-scale"><picture><source srcset="assets/counselor.webp" type="image/webp" /><img src="assets/counselor.png" alt="代表カウンセラー 西川陽介" width="404" height="470" loading="lazy" decoding="async" /></picture></div>
+    <div class="counselor-photo reveal reveal-scale">
+      <picture class="cp-layer cp-base"><source srcset="assets/counselor.webp" type="image/webp" /><img src="assets/counselor.png" alt="代表カウンセラー 西川陽介" width="404" height="470" loading="lazy" decoding="async" /></picture>
+      <picture class="cp-layer cp-alt" aria-hidden="true"><source srcset="assets/counselor-2.webp" type="image/webp" /><img src="assets/counselor-2.png" alt="" width="404" height="470" loading="lazy" decoding="async" /></picture>
+    </div>
     <div class="counselor-name-card reveal" data-delay="1">
       <div class="role">Representative Counselor</div>
       <div class="name-jp">西川 陽介</div>
