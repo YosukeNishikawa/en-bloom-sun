@@ -466,6 +466,84 @@
     will-change:transform;
     opacity:.85;
   }
+  /* Layer 5: sun rays — slowly rotating conic light beams (ties to "SUN") */
+  .fv-bg .sunrays{
+    position:absolute;width:140vmin;height:140vmin;right:-30vmin;top:-50vmin;
+    background:
+      conic-gradient(from 0deg at 50% 50%,
+        rgba(255,236,200,0) 0deg,
+        rgba(255,236,200,.18) 6deg,
+        rgba(255,236,200,0) 14deg,
+        rgba(255,236,200,0) 40deg,
+        rgba(255,236,200,.14) 46deg,
+        rgba(255,236,200,0) 56deg,
+        rgba(255,236,200,0) 90deg,
+        rgba(255,236,200,.20) 96deg,
+        rgba(255,236,200,0) 108deg,
+        rgba(255,236,200,0) 150deg,
+        rgba(255,236,200,.12) 156deg,
+        rgba(255,236,200,0) 166deg,
+        rgba(255,236,200,0) 200deg,
+        rgba(255,236,200,.16) 206deg,
+        rgba(255,236,200,0) 218deg,
+        rgba(255,236,200,0) 260deg,
+        rgba(255,236,200,.14) 266deg,
+        rgba(255,236,200,0) 278deg,
+        rgba(255,236,200,0) 320deg,
+        rgba(255,236,200,.18) 326deg,
+        rgba(255,236,200,0) 338deg,
+        rgba(255,236,200,0) 360deg);
+    mask:radial-gradient(closest-side, rgba(0,0,0,.85) 30%, transparent 75%);
+    -webkit-mask:radial-gradient(closest-side, rgba(0,0,0,.85) 30%, transparent 75%);
+    filter:blur(2px);
+    mix-blend-mode:screen;
+    opacity:.7;
+    animation:sunraysSpin 60s linear infinite;
+    will-change:transform;
+  }
+  /* Layer 6: bokeh — soft floating warm light orbs */
+  .bokeh{
+    position:absolute;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,
+      color-mix(in oklab, var(--gold, #d9b57a) 90%, white) 0%,
+      color-mix(in oklab, var(--accent-soft, #f5e6dc) 80%, transparent) 45%,
+      transparent 72%);
+    filter:blur(6px);
+    mix-blend-mode:screen;
+    opacity:.55;
+    animation:bokehFloat ease-in-out infinite alternate;
+    will-change:transform, opacity;
+    pointer-events:none;
+  }
+  .bokeh:nth-of-type(1){width:90px;height:90px;left:8%;  top:62%;animation-duration:11s;animation-delay:-2s}
+  .bokeh:nth-of-type(2){width:60px;height:60px;left:26%; top:18%;animation-duration:14s;animation-delay:-6s;opacity:.45}
+  .bokeh:nth-of-type(3){width:120px;height:120px;left:64%;top:74%;animation-duration:17s;animation-delay:-3s;opacity:.5}
+  .bokeh:nth-of-type(4){width:48px;height:48px;left:82%; top:30%;animation-duration:9s;  animation-delay:-1s;opacity:.6}
+  .bokeh:nth-of-type(5){width:74px;height:74px;left:46%; top:8%; animation-duration:13s; animation-delay:-8s;opacity:.45}
+  .bokeh:nth-of-type(6){width:36px;height:36px;left:14%; top:38%;animation-duration:10s; animation-delay:-4s;opacity:.55}
+  /* Layer 7: sparkles — tiny twinkling stars */
+  .sparkle{
+    position:absolute;width:6px;height:6px;
+    background:
+      radial-gradient(circle, rgba(255,255,255,.95) 0%, rgba(255,255,255,0) 70%);
+    border-radius:50%;
+    opacity:0;
+    animation:sparkleTwinkle ease-in-out infinite;
+    will-change:opacity, transform;
+    pointer-events:none;
+  }
+  .sparkle::before, .sparkle::after{
+    content:"";position:absolute;left:50%;top:50%;
+    width:1px;height:14px;background:linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.9) 50%, rgba(255,255,255,0));
+    transform:translate(-50%,-50%);
+  }
+  .sparkle::after{transform:translate(-50%,-50%) rotate(90deg)}
+  .sparkle:nth-of-type(1){left:12%;top:22%;animation-duration:4.2s;animation-delay:-.5s}
+  .sparkle:nth-of-type(2){left:78%;top:14%;animation-duration:5.6s;animation-delay:-2s}
+  .sparkle:nth-of-type(3){left:34%;top:56%;animation-duration:4.8s;animation-delay:-3.5s}
+  .sparkle:nth-of-type(4){left:88%;top:58%;animation-duration:5.2s;animation-delay:-1.5s;width:5px;height:5px}
+  .sparkle:nth-of-type(5){left:54%;top:32%;animation-duration:6s;  animation-delay:-4s;width:4px;height:4px}
+  .sparkle:nth-of-type(6){left:22%;top:80%;animation-duration:5s;  animation-delay:-2.5s;width:5px;height:5px}
   /* Drifting leaves overlay — small lance-shaped leaves falling slowly */
   .petal{
     position:absolute;top:-12%;width:18px;height:26px;
@@ -510,8 +588,23 @@
     92% {opacity:.55}
     100%{transform:translate3d(14px,120%,0) rotate(360deg);opacity:0}
   }
+  @keyframes sunraysSpin{
+    0%  {transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+  }
+  @keyframes bokehFloat{
+    0%  {transform:translate3d(0,0,0) scale(1);     opacity:.35}
+    50% {transform:translate3d(-12px,-22px,0) scale(1.08); opacity:.7}
+    100%{transform:translate3d(10px,-36px,0) scale(.95);   opacity:.45}
+  }
+  @keyframes sparkleTwinkle{
+    0%,100%{opacity:0;        transform:scale(.6) rotate(0deg)}
+    45%    {opacity:.95;      transform:scale(1)  rotate(20deg)}
+    55%    {opacity:.95;      transform:scale(1.1) rotate(-10deg)}
+  }
   @media (prefers-reduced-motion: reduce){
-    .fv-bg .canopy,.fv-bg .canopy-2,.fv-bg .glint,.petal{animation:none}
+    .fv-bg .canopy,.fv-bg .canopy-2,.fv-bg .glint,.fv-bg .sunrays,.bokeh,.sparkle,.petal{animation:none}
+    .sparkle{opacity:.6}
     *,*::before,*::after{
       animation-duration:.001ms !important;
       animation-iteration-count:1 !important;
@@ -1041,7 +1134,14 @@
       <div class="canopy"></div>
       <div class="canopy-2"></div>
       <div class="wash"></div>
+      <div class="sunrays"></div>
       <div class="glint"></div>
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
+      <span class="bokeh"></span>
       <span class="petal"></span>
       <span class="petal"></span>
       <span class="petal"></span>
@@ -1049,6 +1149,12 @@
       <span class="petal"></span>
       <span class="petal"></span>
       <span class="petal"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
+      <span class="sparkle"></span>
     </div>
     <div class="fv-logo-mark"><img src="assets/logo.webp" alt="EN BLOOM SUN" width="600" height="584" decoding="async" /></div>
     <div class="wrap">
